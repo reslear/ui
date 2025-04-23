@@ -53,8 +53,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
     }
 
     state.username = ''
-  } catch (err) {
-    // @ts-expect-error this is not properly typed
+  } catch (err: any) {
     errorMessage.value = err.data?.message || err.message
   }
 

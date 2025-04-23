@@ -73,6 +73,7 @@ const groups = ref([
   },
   {
     id: 'actions',
+    label: 'Actions',
     items: [
       {
         label: 'Add new file',

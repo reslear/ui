@@ -4,10 +4,16 @@ defineProps<{
 }>()
 
 const emit = defineEmits<{ close: [boolean] }>()
+
+function closeSlideover() {
+  emit('close', false)
+
+  return true
+}
 </script>
 
 <template>
-  <USlideover :close="{ onClick: () => emit('close', false) }" :description="`This slideover was opened programmatically ${count} times`">
+  <USlideover :close="closeSlideover()" :description="`This slideover was opened programmatically ${count} times`">
     <template #body>
       <Placeholder class="h-full" />
     </template>
